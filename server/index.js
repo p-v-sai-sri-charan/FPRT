@@ -5,6 +5,8 @@ import http from "http";
 import cors from "cors";
 import "dotenv/config.js";
 
+import { router as authRouter } from "./routes/auth.js";
+
 const app = express();
 const MONGO_URL = process.env.MONGO_URL;
 
@@ -17,11 +19,11 @@ mongoose.connect(MONGO_URL, {
     useUnifiedTopology: true,
     useCreateIndex: true,
 });
-
+/*
 app.get("/", (req, res) => {
     res.json({ message: "API Working" });
-});
-
+});*/
+app.use("/", authRouter);
 app.listen(process.env.PORT, () => {
     console.log(`Server has started on port ${process.env.PORT}`);
 });
