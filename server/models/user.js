@@ -35,7 +35,7 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-
+    boards: [{ type: Schema.Types.ObjectId, ref: "Board" }],
     resetPasswordToken: {
       type: String,
       required: false,
