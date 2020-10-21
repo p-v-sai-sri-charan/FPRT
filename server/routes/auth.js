@@ -1,12 +1,8 @@
 import express from "express";
 const router = express.Router();
-import { recover, signin, signup, verify } from "../controllers/auth.js";
+import { register,login} from "../controllers/auth.js";
 
-router.post("/signin", signin);
-router.post("/signup", signup);
+router.post('/register', register)
+router.post('/login', login)
 
-//Signup Email Verification
-router.get("/verify/:token", verify);
-router.post("/forgot",recover);
-
-export { router };
+export {router}

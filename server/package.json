@@ -1,5 +1,5 @@
 {
-  "name": "final_exam",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,18 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^7.3.0",
-    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "cloudinary": "^1.23.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-validator": "^6.6.1",
-    "http": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.9",
-    "path": "^0.12.7"
+    "mongoose": "^5.10.9"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
