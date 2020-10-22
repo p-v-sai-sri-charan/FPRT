@@ -58,3 +58,41 @@ export const login = async(req, res) => {
     res.status(500).json(e)
   }
 }
+
+export const updateprofilepic =(req,res)=>{
+  console.log(req.body.pic)
+  User.findByIdAndUpdate(req.params.id,{$set:{pic:req.body.pic}},{new:true},
+    (err,result)=>{
+        if(err){
+            return res.status(422).json({error:err})
+        }
+        res.json(result)
+})
+}
+
+export const updatepassword = async(req,res)=>{
+  console.log(req.body.password)
+  const hashPassword = await bcrypt.hash(req.body.password, 8)
+  User.findByIdAndUpdate(req.params.id,{$set:{password:hashPassword}},{new:true},
+    (err,result)=>{
+        if(err){
+            return res.status(422).json({error:err})
+        }
+        console.log(result)
+        res.json(result)
+})
+}
+
+export const getdatabyid = (req,res)=>{
+  const id = req.params.id
+  console.log(id)
+  User.findOne({_id:id}).select("_id userName email pic ")
+  .then((user) => {
+    console.log(user)
+    res.json({ user:user });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+}

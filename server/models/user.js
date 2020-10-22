@@ -12,7 +12,12 @@ const userSchema = new mongoose.Schema({
   },
   userName: {
     type: String,
-    required:true
+    required:true,
+    default:"user"
+  },
+  pic:{
+    type:String,
+    default:"https://res.cloudinary.com/slyde/image/upload/v1593166367/avatar-default_sgnvcm.png"
   }
 })
 

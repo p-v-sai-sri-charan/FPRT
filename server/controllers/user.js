@@ -11,3 +11,4 @@ export const get = async (req, res) => {
     res.status(500).json(e)
   }
 }
+
