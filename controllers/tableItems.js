@@ -1,4 +1,4 @@
-import Item from '../models/Tableitem'
+import Item from '../models/TableItem.js'
 import Table from '../models/Table.js'
 
 export const create = async (req, res) => {
